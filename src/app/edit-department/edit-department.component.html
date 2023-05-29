@@ -1,0 +1,23 @@
+<app-navigation></app-navigation>
+<main>
+  <form class="custom-btn-width" [formGroup]="editDepartmentForm">
+    <div class="form-group">
+      <label for="exampleInputEmail1">Department Name</label>
+      <input
+        type="email"
+        class="form-control"
+        id="exampleInputEmail1"
+        aria-describedby="emailHelp"
+        placeholder="Enter email"
+        [formControlName]="'departmentName'"
+      />
+    </div>
+  </form>
+  <button
+    type="submit"
+    class="btn btn-primary btn-lg btn-block custom-btn-width"
+    (click)="editDepartment()"
+  >
+    Edit Department
+  </button>
+</main>

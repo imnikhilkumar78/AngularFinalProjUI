@@ -1,0 +1,67 @@
+<app-navigation></app-navigation>
+<main>
+  <form class="custom-btn-width" [formGroup]="editStudentForm">
+    <div class="form-group">
+      <label for="exampleInputEmail1">Name</label>
+      <input
+        type="email"
+        class="form-control"
+        id="exampleInputEmail1"
+        aria-describedby="emailHelp"
+        placeholder="Enter email"
+        [formControlName]="'studentName'"
+      />
+    </div>
+    <div class="form-group">
+      <label for="exampleInputEmail1">Course</label>
+      <input
+        type="email"
+        class="form-control"
+        id="exampleInputEmail1"
+        aria-describedby="emailHelp"
+        placeholder="Enter email"
+        [formControlName]="'studentCourse'"
+      />
+    </div>
+    <div class="form-group">
+      <label for="exampleInputEmail1">Specialization</label>
+      <input
+        type="email"
+        class="form-control"
+        id="exampleInputEmail1"
+        aria-describedby="emailHelp"
+        placeholder="Enter email"
+        [formControlName]="'studentSpecialization'"
+      />
+    </div>
+    <div class="form-group">
+      <label for="exampleInputEmail1">Percentage</label>
+      <input
+        type="email"
+        class="form-control"
+        id="exampleInputEmail1"
+        aria-describedby="emailHelp"
+        placeholder="Enter email"
+        [formControlName]="'percentage'"
+      />
+    </div>
+    <div class="form-group">
+      <label for="exampleInputEmail1">DepartmentID</label>
+      <input
+        type="email"
+        class="form-control"
+        id="exampleInputEmail1"
+        aria-describedby="emailHelp"
+        placeholder="Enter email"
+        [formControlName]="'departmentId'"
+      />
+    </div>
+  </form>
+  <button
+    type="submit"
+    class="btn btn-primary btn-lg btn-block custom-btn-width"
+    (click)="editStudent()"
+  >
+    Edit Student
+  </button>
+</main>
