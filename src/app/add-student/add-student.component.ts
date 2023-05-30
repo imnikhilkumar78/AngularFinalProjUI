@@ -11,12 +11,6 @@ import { Validators } from '@angular/forms';
   styleUrls: ['./add-student.component.css'],
 })
 export class AddStudentComponent implements OnInit {
-  studentId: number = 0;
-  studentName: string = '';
-  studentCourse: string = '';
-  studentSpecialization: string = '';
-  percentage: number = 0;
-  departmentId: number = 0;
   addStudentForm: FormGroup;
 
   constructor(private router: Router, private service: ApiServiceService) {}
@@ -34,5 +28,6 @@ export class AddStudentComponent implements OnInit {
     this.service.createStudent(this.addStudentForm.value).subscribe((res) => {
       alert('Student Added Successfully');
     });
+    this.router.navigate(['/student']);
   }
 }

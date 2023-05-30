@@ -1,72 +1,125 @@
-<app-student></app-student>
-<main>
-  <form class="custom-btn-width" [formGroup]="addStudentForm">
-    <div class="form-group">
-      <label for="exampleInputEmail1">Name</label>
-      <input
-        type="email"
-        class="form-control"
-        id="exampleInputEmail1"
-        aria-describedby="emailHelp"
-        placeholder="Enter email"
-        [(ngModel)]="studentName"
-        [formControlName]="'studentName'"
-      />
-    </div>
-    <div class="form-group">
-      <label for="exampleInputEmail1">Course</label>
-      <input
-        type="email"
-        class="form-control"
-        id="exampleInputEmail1"
-        aria-describedby="emailHelp"
-        placeholder="Enter email"
-        [(ngModel)]="studentCourse"
-        [formControlName]="'studentCourse'"
-      />
-    </div>
-    <div class="form-group">
-      <label for="exampleInputEmail1">Specialization</label>
-      <input
-        type="email"
-        class="form-control"
-        id="exampleInputEmail1"
-        aria-describedby="emailHelp"
-        placeholder="Enter email"
-        [(ngModel)]="studentSpecialization"
-        [formControlName]="'studentSpecialization'"
-      />
-    </div>
-    <div class="form-group">
-      <label for="exampleInputEmail1">Percentage</label>
-      <input
-        type="email"
-        class="form-control"
-        id="exampleInputEmail1"
-        aria-describedby="emailHelp"
-        placeholder="Enter email"
-        [(ngModel)]="percentage"
-        [formControlName]="'percentage'"
-      />
-    </div>
-    <div class="form-group">
-      <label for="exampleInputEmail1">DepartmentID</label>
-      <input
-        type="email"
-        class="form-control"
-        id="exampleInputEmail1"
-        aria-describedby="emailHelp"
-        placeholder="Enter email"
-        [(ngModel)]="departmentId"
-        [formControlName]="'departmentId'"
-      />
-    </div>
-  </form>
-  <button
-    type="submit"
-    class="btn btn-primary btn-lg btn-block custom-btn-width"
-    (click)="addStudent()"
-  >
-    Add Student
-  </button>
+<app-navigation></app-navigation>
+<main class="col d-flex justify-content-center mt-2">
+  <div class="card" style="width: 30rem">
+    <form [formGroup]="addStudentForm">
+      <div class="form-group">
+        <label for="exampleInputEmail1">Name</label>
+        <input
+          [class.is-invalid]="
+            addStudentForm.get('studentName')?.invalid &&
+            addStudentForm.get('studentName')?.touched
+          "
+          type="text"
+          class="form-control"
+          placeholder="Enter Name"
+          [formControlName]="'studentName'"
+        />
+        <small
+          *ngIf="
+            addStudentForm.get('studentName')?.hasError('required') &&
+            addStudentForm.get('studentName')?.touched
+          "
+          class="text-danger"
+          >Student Name is empty</small
+        >
+      </div>
+      <div class="form-group">
+        <label for="exampleInputEmail1">Course</label>
+        <input
+          [class.is-invalid]="
+            addStudentForm.get('studentCourse')?.invalid &&
+            addStudentForm.get('studentCourse')?.touched
+          "
+          type="email"
+          class="form-control"
+          placeholder="Enter Course"
+          [formControlName]="'studentCourse'"
+        />
+        <small
+          *ngIf="
+            addStudentForm.get('studentCourse')?.hasError('required') &&
+            addStudentForm.get('studentCourse')?.touched
+          "
+          class="text-danger"
+          >Student Course is invalid</small
+        >
+      </div>
+      <div class="form-group">
+        <label for="exampleInputEmail1">Specialization</label>
+        <input
+          [class.is-invalid]="
+            addStudentForm.get('studentSpecialization')?.invalid &&
+            addStudentForm.get('studentSpecialization')?.touched
+          "
+          type="email"
+          class="form-control"
+          id="exampleInputEmail1"
+          aria-describedby="emailHelp"
+          placeholder="Enter Specialization"
+          [formControlName]="'studentSpecialization'"
+        />
+        <small
+          *ngIf="
+            addStudentForm.get('studentSpecialization')?.hasError('required') &&
+            addStudentForm.get('studentSpecialization')?.touched
+          "
+          class="text-danger"
+          >Student Specialization is invalid</small
+        >
+      </div>
+      <div class="form-group">
+        <label for="exampleInputEmail1">Percentage</label>
+        <input
+          [class.is-invalid]="
+            addStudentForm.get('percentage')?.invalid &&
+            addStudentForm.get('percentage')?.touched
+          "
+          type="email"
+          class="form-control"
+          id="exampleInputEmail1"
+          aria-describedby="emailHelp"
+          placeholder="Enter Percentage"
+          [formControlName]="'percentage'"
+        />
+        <small
+          *ngIf="
+            addStudentForm.get('percentage')?.hasError('required') &&
+            addStudentForm.get('percentage')?.touched
+          "
+          class="text-danger"
+          >Student Percentage is invalid</small
+        >
+      </div>
+      <div class="form-group">
+        <label for="exampleInputEmail1">DepartmentID</label>
+        <input
+          [class.is-invalid]="
+            addStudentForm.get('departmentId')?.invalid &&
+            addStudentForm.get('departmentId')?.touched
+          "
+          type="email"
+          class="form-control"
+          id="exampleInputEmail1"
+          aria-describedby="emailHelp"
+          placeholder="Enter DepartmentID"
+          [formControlName]="'departmentId'"
+        />
+        <small
+          *ngIf="
+            addStudentForm.get('departmentId')?.hasError('required') &&
+            addStudentForm.get('departmentId')?.touched
+          "
+          class="text-danger"
+          >Department Id is invalid</small
+        >
+      </div>
+    </form>
+    <button
+      type="submit"
+      class="btn btn-primary btn-lg btn-block custom-btn-width"
+      (click)="addStudent()"
+    >
+      Add Student
+    </button>
+  </div>
 </main>

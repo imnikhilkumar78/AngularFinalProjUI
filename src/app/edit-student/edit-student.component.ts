@@ -30,5 +30,6 @@ export class EditStudentComponent implements OnInit {
     this.service.editStudent(this.editStudentForm.value).subscribe((res) => {
       alert('Details Edited Successfully');
     });
+    this.router.navigate(['/student']);
   }
 }

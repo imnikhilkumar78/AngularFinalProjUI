@@ -24,5 +24,6 @@ export class AddDepartmentComponent implements OnInit {
       .subscribe((res) => {
         alert('Department Added Successfully');
       });
+    this.router.navigate(['/department']);
   }
 }

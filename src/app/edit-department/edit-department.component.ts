@@ -28,5 +28,6 @@ export class EditDepartmentComponent implements OnInit {
       .subscribe((res) => {
         alert('Details Edited Successfully');
       });
+    this.router.navigate(['/department']);
   }
 }

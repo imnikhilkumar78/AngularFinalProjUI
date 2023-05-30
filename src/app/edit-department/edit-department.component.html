@@ -1,23 +1,37 @@
 <app-navigation></app-navigation>
-<main>
-  <form class="custom-btn-width" [formGroup]="editDepartmentForm">
-    <div class="form-group">
-      <label for="exampleInputEmail1">Department Name</label>
-      <input
-        type="email"
-        class="form-control"
-        id="exampleInputEmail1"
-        aria-describedby="emailHelp"
-        placeholder="Enter email"
-        [formControlName]="'departmentName'"
-      />
-    </div>
-  </form>
-  <button
-    type="submit"
-    class="btn btn-primary btn-lg btn-block custom-btn-width"
-    (click)="editDepartment()"
-  >
-    Edit Department
-  </button>
+<main class="col d-flex justify-content-center mt-2">
+  <div class="card" style="width: 30rem">
+    <form class="custom-btn-width" [formGroup]="editDepartmentForm">
+      <div class="form-group">
+        <label for="exampleInputEmail1" class="font-weight-bold"
+          >Department Name</label
+        >
+        <input
+          [class.is-invalid]="
+            editDepartmentForm.get('departmentName')?.invalid &&
+            editDepartmentForm.get('departmentName')?.touched
+          "
+          type="text"
+          class="form-control"
+          placeholder="Enter Department Name"
+          [formControlName]="'departmentName'"
+        />
+        <small
+          *ngIf="
+            editDepartmentForm.get('departmentName')?.hasError('required') &&
+            editDepartmentForm.get('departmentName')?.touched
+          "
+          class="text-danger"
+          >Department Name is empty</small
+        >
+      </div>
+    </form>
+    <button
+      type="submit"
+      class="btn btn-primary btn-lg btn-block custom-btn-width"
+      (click)="editDepartment()"
+    >
+      Edit Department
+    </button>
+  </div>
 </main>
