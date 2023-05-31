@@ -116,6 +116,8 @@
     </form>
     <button
       type="submit"
+      [disabled]="!addStudentForm.valid"
+      [ngClass]="{ 'cursor-not-allowed ': !addStudentForm.valid }"
       class="btn btn-primary btn-lg btn-block custom-btn-width"
       (click)="addStudent()"
     >

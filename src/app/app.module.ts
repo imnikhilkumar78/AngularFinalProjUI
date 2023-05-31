@@ -13,6 +13,8 @@ import { AddDepartmentComponent } from './add-department/add-department.componen
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EditStudentComponent } from './edit-student/edit-student.component';
 import { EditDepartmentComponent } from './edit-department/edit-department.component';
+import { LoginComponent } from './login/login.component';
+import { UserRegisterComponent } from './user-register/user-register.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +27,8 @@ import { EditDepartmentComponent } from './edit-department/edit-department.compo
     AddDepartmentComponent,
     EditStudentComponent,
     EditDepartmentComponent,
+    LoginComponent,
+    UserRegisterComponent,
   ],
   imports: [
     BrowserModule,

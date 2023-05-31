@@ -28,6 +28,8 @@
     </form>
     <button
       type="submit"
+      [disabled]="!addDepartmentForm.valid"
+      [ngClass]="{ 'cursor-not-allowed ': !addDepartmentForm.valid }"
       class="btn btn-primary btn-lg btn-block custom-btn-width"
       (click)="addDepartment()"
     >

@@ -118,6 +118,8 @@
     </form>
     <button
       type="submit"
+      [disabled]="!editStudentForm.valid"
+      [ngClass]="{ 'cursor-not-allowed ': !editStudentForm.valid }"
       class="btn btn-primary btn-lg btn-block custom-btn-width"
       (click)="editStudent()"
     >
